@@ -6,6 +6,6 @@ Ideen er at lave en tydelig beskrivelse af spillets virkemåde, og gode tips til
 Løsningen, og vejledningen, kan også bruges som et eksempel på obektorienteret programmering.
 
 Vejledningerne følger i:
-* Brugergrænseflade
+* [Brugergrænseflade](docs/user_interface.md)
 * Spillets virkemåde
 * Datastrukturer og objekter
