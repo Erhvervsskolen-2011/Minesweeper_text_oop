@@ -1,0 +1,89 @@
+﻿// See https://aka.ms/new-console-template for more information
+// Console.WriteLine("Hello, World!");
+
+const int lines = 10;
+const int columns = 20;
+
+// Her bruger jeg "bare" et to-dim array af simple chars (et bogstav)
+
+char[,] pad = new char[columns, lines];
+
+for (int column = 0; column < pad.GetLength(0); column++) 
+{ 
+  for (int line = 0; line < pad.GetLength(1); line++) 
+  { 
+    pad[column,line] = '▓';
+    // Console.WriteLine(pad[i, j]); 
+  } 
+}  
+
+const int top = 1;
+const int left = 2; 
+
+// udskriv pladen
+
+Console.Clear();
+
+for (int column = 0; column < pad.GetLength(0); column++) 
+{ 
+  for (int line = 0; line < pad.GetLength(1); line++) 
+  { 
+    Console.SetCursorPosition(top+column, left+line);
+    Console.Write(pad[column, line]); 
+  } 
+}  
+
+// PLAY
+
+bool gameover = false;
+
+// set cursoren ind øverst til venstre
+
+Console.SetCursorPosition(top, left);
+int currentLine = 0;
+int currentColumn = 0; 
+
+while (!gameover) 
+{
+    System.ConsoleKey pressedKey = Console.ReadKey().Key;
+
+    switch (pressedKey) 
+    {
+        case ConsoleKey.Spacebar:
+            pad[currentColumn, currentLine] = '⚑';
+            break;
+
+        case ConsoleKey.Enter:
+            pad[currentColumn, currentLine] = '░';
+            break;
+
+        case ConsoleKey.UpArrow:
+            if (currentLine > 0)
+            {
+                currentLine--;
+            }
+            break;   
+        case ConsoleKey.DownArrow:
+            if (currentLine < lines-1)
+            {
+                currentLine++;
+            }
+            break;   
+        case ConsoleKey.LeftArrow:
+            if (currentColumn > 0)
+            {
+                currentColumn--;
+            }
+            break;   
+        case ConsoleKey.RightArrow:
+            if (currentColumn < columns-1)
+            {
+                currentColumn++;
+            }
+            break;   
+
+
+    }
+    Console.SetCursorPosition( top+currentColumn, left+currentLine);
+    Console.Write(pad[currentColumn, currentLine]);
+}
