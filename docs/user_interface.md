@@ -54,3 +54,29 @@ Når rammen er over et felt, som stadig er ukendt, kan spilleren trykke på __en
 Når et felt _ikke_ har en mine, og "trædes" på, bliver det ryddet, og de fire felter der støder op til ryddes efterfølgende. Disse __nabo-felter__'s naboer ryddes også hvis de er uden miner. Hvis et ryddet felt grænser op imod et felt med en mine, hvises et tal i feltet, for hvor mange miner det grænser op til.
 
 Et felt kan maksimalt grænse op til 8 andre felter. Derfor kan der være fra 0 til 8 miner op til et felt.
+
+||||
+|:-:|:-:|:-:|
+|↖|↑|↗|
+|←|aktivt felt|→|
+|↙|↓|↘|
+
+Nabofelterne kan vi give navne ud fra verdenshjørnerne, så nabofeltet til højre er der ligger mod øst, felt ovenfor mod nord, skråt ovenfor til højre er nordøst osv.
+
+||-1|0|+1|
+|-:|:-:|:-:|:-:|
+|-1|NW|N|NE|
+|0|W|aktivt felt|E|
+|+1|SW|S|SE|
+
+Hvis vi kigger på koordinater kan man se at alle felterne ovenfor ligger en linjer hvis tal er 1 mindre end det aktuele felt.  
+Felterne neden for på en linje der er den aktuelle linje +1.  
+Lige sådan er alle nabofelterne til venstre er en mindre end den aktulle kolonne. til højre er den aktuelle kolonne +1
+
+||||
+|:-:|:-:|:-:|
+|(-1,-1)|(0,-1)|(+1,-1)|
+|(-1,0)|aktivt felt|(+1,0)|
+|(-1,+1)|(0,+1)|(+1,+1)|
+
+Her er hver parentes et talpar man trækker fra eller lægger til x, y koordinattet, altså linien og kolonnen hvor det aktuelle felt er.
