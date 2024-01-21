@@ -20,6 +20,20 @@ for (int column = 0; column < pad.GetLength(0); column++)
 const int top = 1;
 const int left = 2; 
 
+void drawRedCursor(int x, int y)
+{
+    Console.SetCursorPosition(top + x, left + y);
+    Console.BackgroundColor = ConsoleColor.DarkRed;
+    Console.Write(pad[x, y]);
+}
+
+void removeRedCursor(int x, int y)
+{
+    Console.SetCursorPosition(top + x, left + y);
+    Console.ResetColor();
+    Console.Write(pad[x, y]);
+}
+
 // udskriv pladen
 
 Console.Clear();
@@ -35,55 +49,81 @@ for (int column = 0; column < pad.GetLength(0); column++)
 
 // PLAY
 
-bool gameover = false;
-
-// set cursoren ind øverst til venstre
-
-Console.SetCursorPosition(top, left);
-int currentLine = 0;
-int currentColumn = 0; 
-
-while (!gameover) 
+// try fordi jeg gerne vil sætte cursor til igen
+try
 {
-    System.ConsoleKey pressedKey = Console.ReadKey().Key;
+    // sluk cursor, fordi det ikke ser fedt ud
+    Console.CursorVisible = false;
 
-    switch (pressedKey) 
+    bool gameover = false;
+
+    // set cursoren ind øverst til venstre
+
+    int currentLine = 0;
+    int currentColumn = 0; 
+    Console.SetCursorPosition(top, left);
+    drawRedCursor(currentColumn, currentLine);
+
+    while (!gameover) 
     {
-        case ConsoleKey.Spacebar:
-            pad[currentColumn, currentLine] = '⚑';
-            break;
+        System.ConsoleKey pressedKey = Console.ReadKey().Key;
 
-        case ConsoleKey.Enter:
-            pad[currentColumn, currentLine] = '░';
-            break;
+        switch (pressedKey) 
+        {
+            case ConsoleKey.Escape:
+                gameover = true;
+                break;
+            case ConsoleKey.Spacebar:
+                pad[currentColumn, currentLine] = '⚑';
+                break;
 
-        case ConsoleKey.UpArrow:
-            if (currentLine > 0)
-            {
-                currentLine--;
-            }
-            break;   
-        case ConsoleKey.DownArrow:
-            if (currentLine < lines-1)
-            {
-                currentLine++;
-            }
-            break;   
-        case ConsoleKey.LeftArrow:
-            if (currentColumn > 0)
-            {
-                currentColumn--;
-            }
-            break;   
-        case ConsoleKey.RightArrow:
-            if (currentColumn < columns-1)
-            {
-                currentColumn++;
-            }
-            break;   
+            case ConsoleKey.Enter:
+                pad[currentColumn, currentLine] = '░';
+                break;
 
+            case ConsoleKey.UpArrow:
+                if (currentLine > 0)
+                {
+                    removeRedCursor(currentColumn, currentLine);
+                    currentLine--;
+                }
+                break;   
+            case ConsoleKey.DownArrow:
+                if (currentLine < lines-1)
+                {
+                    removeRedCursor(currentColumn, currentLine);
+                    currentLine++;
+                }
+                break;   
+            case ConsoleKey.LeftArrow:
+                if (currentColumn > 0)
+                {
+                    removeRedCursor(currentColumn, currentLine);
+                    currentColumn--;
+                }
+                break;   
+            case ConsoleKey.RightArrow:
+                if (currentColumn < columns-1)
+                {
+                    // Console.SetCursorPosition( top+currentColumn, left+currentLine);
+                    // Console.ResetColor();
+                    // Console.Write(pad[currentColumn, currentLine]);
+                    removeRedCursor(currentColumn, currentLine);
+                    currentColumn++;
+                }
+                break;   
+
+
+        }
+        // Console.SetCursorPosition( top+currentColumn, left+currentLine);
+        // Console.BackgroundColor = ConsoleColor.DarkRed;
+        // Console.Write(pad[currentColumn, currentLine]);
+        drawRedCursor(currentColumn, currentLine);
 
     }
-    Console.SetCursorPosition( top+currentColumn, left+currentLine);
-    Console.Write(pad[currentColumn, currentLine]);
+
+}
+finally {
+    Console.CursorVisible = true;
+    Console.ResetColor();
 }
