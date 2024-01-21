@@ -1,19 +1,19 @@
-﻿// See https://aka.ms/new-console-template for more information
-// Console.WriteLine("Hello, World!");
+﻿using minesweeper;
 
 const int lines = 10;
 const int columns = 20;
 
 // Her bruger jeg "bare" et to-dim array af simple chars (et bogstav)
 
-char[,] pad = new char[columns, lines];
+Minecell[,] pad = new Minecell[columns, lines];
 
 for (int column = 0; column < pad.GetLength(0); column++) 
 { 
   for (int line = 0; line < pad.GetLength(1); line++) 
   { 
-    pad[column,line] = '▓';
-    // Console.WriteLine(pad[i, j]); 
+    // pad[column,line] = '▓';
+    // Console.WriteLine(pad[i, j]);
+    pad[column,line] = new Minecell(column, line, pad);
   } 
 }  
 
@@ -24,14 +24,14 @@ void drawRedCursor(int x, int y)
 {
     Console.SetCursorPosition(top + x, left + y);
     Console.BackgroundColor = ConsoleColor.DarkRed;
-    Console.Write(pad[x, y]);
+    Console.Write(pad[x, y].symbol);
 }
 
 void removeRedCursor(int x, int y)
 {
     Console.SetCursorPosition(top + x, left + y);
     Console.ResetColor();
-    Console.Write(pad[x, y]);
+    Console.Write(pad[x, y].symbol);
 }
 
 // udskriv pladen
@@ -43,7 +43,7 @@ for (int column = 0; column < pad.GetLength(0); column++)
   for (int line = 0; line < pad.GetLength(1); line++) 
   { 
     Console.SetCursorPosition(top+column, left+line);
-    Console.Write(pad[column, line]); 
+    Console.Write(pad[column, line].symbol); 
   } 
 }  
 
@@ -74,11 +74,11 @@ try
                 gameover = true;
                 break;
             case ConsoleKey.Backspace:
-                pad[currentColumn, currentLine] = '⚑';
+                pad[currentColumn, currentLine].setFlag();
                 break;
 
             case ConsoleKey.Enter:
-                pad[currentColumn, currentLine] = '░';
+                pad[currentColumn, currentLine].clear();
                 break;
 
             case ConsoleKey.UpArrow:
