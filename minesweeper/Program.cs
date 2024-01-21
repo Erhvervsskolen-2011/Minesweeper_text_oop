@@ -73,7 +73,7 @@ try
             case ConsoleKey.Escape:
                 gameover = true;
                 break;
-            case ConsoleKey.Spacebar:
+            case ConsoleKey.Backspace:
                 pad[currentColumn, currentLine] = '⚑';
                 break;
 
