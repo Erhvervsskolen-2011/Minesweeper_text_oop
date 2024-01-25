@@ -8,11 +8,11 @@ namespace minesweeper
         int x;
         int y;
 
+        Minecell[,] pad;
         Minecell[] nabours;
-
         public char symbol = '▓';
-
         public int nearbymines = 0;
+        bool isCleared = false;
 
         Minecell[] findNabours(Minecell[,] pad)
         {
@@ -79,7 +79,7 @@ namespace minesweeper
 
         int countNearbymines(Minecell[] nabours)
         {
-            System.Console.Write("n Nabours: " + nabours.Length);
+            // System.Console.Write("n Nabours: " + nabours.Length);
             int mines = 0;
             foreach (Minecell cell in nabours)
             {
@@ -92,8 +92,10 @@ namespace minesweeper
 
         public bool clear()
         {
+            this.nabours = this.findNabours(pad);
             this.nearbymines = this.countNearbymines(this.nabours);
 
+            Console.ResetColor();
             if (this.hasMine)
             {
                 this.symbol = '*';
@@ -101,15 +103,27 @@ namespace minesweeper
             }
             else if (this.nearbymines > 0)
             {
-                this.symbol = (char)this.nearbymines;
-                return true;
+                this.symbol = Convert.ToString(this.nearbymines)[0];
+                Console.SetCursorPosition(this.x, this.y);
+                Console.Write(this.symbol);
+                // Console.WriteLine(this.nearbymines);
             }
             else
             {
+                this.isCleared = true;
                 this.symbol = '░';
-                return true;
+                Console.SetCursorPosition(this.x, this.y);
+                Console.Write(this.symbol);
+                foreach (Minecell cell in this.nabours)
+                {
+                    if (!cell.isCleared && !cell.hasMine)
+                    {
+                        cell.clear();
+                    }
+                }
+                Console.SetCursorPosition(this.x, this.y);
             }
-            //clear nabours
+            return true;
         }
 
         public void setFlag()
@@ -121,7 +135,8 @@ namespace minesweeper
         {
             this.x = x;
             this.y = y;
-            this.nabours = findNabours(pad);
+            // this.nabours = findNabours(pad);
+            this.pad = pad;
         }
     }
 }

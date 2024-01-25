@@ -1,7 +1,7 @@
 ﻿using minesweeper;
 
-const int lines = 10;
-const int columns = 20;
+const int lines = 8;
+const int columns = 16;
 
 // Her bruger jeg "bare" et to-dim array af simple chars (et bogstav)
 
@@ -17,15 +17,15 @@ for (int column = 0; column < pad.GetLength(0); column++)
   } 
 }  
 
-const int top = 1;
-const int left = 2; 
+const int top = 0;
+const int left = 0; 
 
 // indsæt nogen miner
 
 Random r = new Random();
 // var cellswithmines = r.GetItems(pad, 10);
 
-int nMines = 10;
+int nMines = 20;
 int[] mine_xs = r.GetItems(Enumerable.Range(0, columns).ToArray(), nMines);
 int[] mine_ys = r.GetItems(Enumerable.Range(0, lines).ToArray(), nMines);
 
@@ -60,9 +60,9 @@ for (int column = 0; column < pad.GetLength(0); column++)
   { 
     Console.SetCursorPosition(top+column, left+line);
     // Console.Write(pad[column, line].symbol); 
-    if (pad[column, line].hasMine)
-        Console.Write('*');
-    else
+    // if (pad[column, line].hasMine)
+    //     Console.Write('*');
+    // else
         Console.Write(pad[column, line].symbol); 
     
   } 
@@ -94,12 +94,16 @@ try
             case ConsoleKey.Escape:
                 gameover = true;
                 break;
+
             case ConsoleKey.Backspace:
                 pad[currentColumn, currentLine].setFlag();
                 break;
 
             case ConsoleKey.Enter:
-                pad[currentColumn, currentLine].clear();
+                if (!pad[currentColumn, currentLine].clear())
+                {
+                    gameover = true;
+                }
                 break;
 
             case ConsoleKey.UpArrow:
