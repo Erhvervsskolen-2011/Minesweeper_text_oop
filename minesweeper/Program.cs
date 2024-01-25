@@ -20,6 +20,22 @@ for (int column = 0; column < pad.GetLength(0); column++)
 const int top = 1;
 const int left = 2; 
 
+// indsæt nogen miner
+
+Random r = new Random();
+// var cellswithmines = r.GetItems(pad, 10);
+
+int nMines = 10;
+int[] mine_xs = r.GetItems(Enumerable.Range(0, columns).ToArray(), nMines);
+int[] mine_ys = r.GetItems(Enumerable.Range(0, lines).ToArray(), nMines);
+
+for (int i = 0; i < nMines; i++)
+{
+    int x = mine_xs[i];
+    int y = mine_ys[i];
+    pad[x,y].hasMine = true;
+}
+
 void drawRedCursor(int x, int y)
 {
     Console.SetCursorPosition(top + x, left + y);
@@ -43,7 +59,12 @@ for (int column = 0; column < pad.GetLength(0); column++)
   for (int line = 0; line < pad.GetLength(1); line++) 
   { 
     Console.SetCursorPosition(top+column, left+line);
-    Console.Write(pad[column, line].symbol); 
+    // Console.Write(pad[column, line].symbol); 
+    if (pad[column, line].hasMine)
+        Console.Write('*');
+    else
+        Console.Write(pad[column, line].symbol); 
+    
   } 
 }  
 
