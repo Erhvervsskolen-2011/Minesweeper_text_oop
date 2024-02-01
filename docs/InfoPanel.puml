@@ -1,0 +1,15 @@
+@startuml
+
+
+class  InfoPanel{
+    mines : int
+    reamingMines : int
+    flags : int
+    cleared : double note percent
+
+    + InfoPanel()
+    + Update(final : bool)
+}
+
+
+@enduml

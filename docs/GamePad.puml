@@ -1,0 +1,13 @@
+@startuml
+
+class GamePad {
+    nLines : int
+    nColums : int
+    + cells Minecell[,]
+
+    + Gamepad(nLines :int, nColums : int)
+    + evaluateMines()
+
+}
+
+@enduml
