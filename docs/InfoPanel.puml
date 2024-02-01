@@ -1,15 +1,25 @@
 @startuml
 
-
 class  InfoPanel{
     mines : int
-    reamingMines : int
+    remainingMines : int
     flags : int
-    cleared : double note percent
-
+    - false_flags : int
+    - true_flags : int
+    cleared : double 
+    
     + InfoPanel()
     + Update(final : bool)
 }
+
+note right of InfoPanel::cleared 
+   percent
+end note
+
+note right of InfoPanel::Update
+    Hvis final == true 
+        skal false_flags og true_flags også udskrives
+end note
 
 
 @enduml

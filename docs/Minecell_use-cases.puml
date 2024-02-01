@@ -1,0 +1,43 @@
+@startuml
+
+left to right direction
+
+Game --> (init)
+
+note right of (init)
+  Opret objektet, 
+    set x og y
+    kald findNabours()
+  
+  Find n tilfældige x,y koodinater (uden dubletter)
+  Set hasMine = true på de valgte celler
+
+  Når alle celler er oprettet
+    for alle celler,
+        kald countNearbymines
+end note
+
+Game --> (setflag)
+
+note right of (setflag)
+    set cellens symbol til 'f'
+end note
+
+Game --> (clear celle)
+
+note right of (clear celle)
+    Hvis cellen har mine
+        gameover
+    ellers Hvis cellen har 1 eller flere miner i nærheden
+        set symbol = nearbymines
+        vis antal miner i nærheden
+    Ellers
+        hvis cellen ikke allerede er clered
+            tæl miner i nærheden, kald countNearbymines()
+            for alle naboer
+                hvis nabo-cellen ikke har mine eller ikke allerede er clered
+                    clear nabo-celle
+                    set isClered = true
+end note
+
+@enduml
