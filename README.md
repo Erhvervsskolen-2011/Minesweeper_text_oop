@@ -7,5 +7,5 @@ Løsningen, og vejledningen, kan også bruges som et eksempel på obektorientere
 
 Vejledningerne følger i:
 * [Brugergrænseflade](docs/user_interface.md)
-* Spillets virkemåde
-* Datastrukturer og objekter
+* [Spillets virkemåde](docs/functionality.md)
+* [Datastrukturer og objekter](docs/candidate_classes.md)

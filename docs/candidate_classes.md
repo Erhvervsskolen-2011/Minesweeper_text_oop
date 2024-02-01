@@ -1,0 +1,23 @@
+# Implementation med Klasser
+
+## Klassekandidater
+
+I dette projekt forventer jeg at oprette klasserne `GamePad`, `Minecell` og `InfoPanel`.
+
+### GamePad
+
+![GamePad](https://www.plantuml.com/plantuml/png/SoWkIImgAStDuU9ApaaiBbPmJynD3KXCKQZcKW22F9_ClDHY1Ik5pBmIY81pVavfBhA8ja9oQavEiO8lK2M85QqJomML09bLa9YY0JC5g4K7rGHDgChKiiISqiIIL90XnHgQN5orN5mEgNafG8S10000 "GamePad")
+
+
+
+### Minecell
+
+![Minecell](https://www.plantuml.com/plantuml/png/RP112i8m44NtFSNiMca5rmL14DpP2uYBQH9j84saauf5F8NW0Js9OvjQ4Ri9yt_V_vEio6FZszf4mY0HRBLLGXa3rmZuIw52UckGG-cSWIKSq93gpJbSMDRMXwdxcbAWhYuPo45Ks30NFn_tE7XMOLDsDUVImB2_22cQrePj9VzN7hIL1PQkRIWveSp7XNVPViR4Pzo7_uLhhI-cliGEy0JstBItUBSdiz0-NaRvZS5ZBv-Tba4UCv9BpW4PTCFnkrTqYrRAIdxb5m00 "Minecell")
+
+#### Minecell use-cases
+
+![Minecell_use-cases](https://www.plantuml.com/plantuml/png/ZLDBRi8m4Dtd56zNa63H0r0XLVriIXSzWPDCWXjZ8tk2u41m4IxMiKdI8AXKouhi-Jo_UJDP1bQUsut9CaCLWnsyhjUCKdigM3kRPMzgGvZFdp3HLlCqownZwi9SrLk1pwqdiUJVr33n3682WfZsS3KEwTeeKwBIjboftBK-J6AYx5SnmOArgSudK-gQi9yTq3XNQgkOF2PjIHPbcnjYkSUyBy5Ug_2XBM41zYrXUpwY9EoKgOLZGSQGpoHqTJvwABbrDiXsaQymJSGgT-MV9UF0k72jvHKfdnysybh8AD8L6SRgIAcLKVMjG8EZ5oIzOGF2OPCx4wl6G_Lm5xGmykebuHRuoXd1ttSwTEYYZ4SaErHI2wZRYHxnageCDmcF5mSg-L1Azz2mvvDVa-W_OCKgElOBs94mVK34LPQL-GFa9Rq_XAz7F7JJKEg5b-ZOg28TXzYuMARa5dbslrkJwLNkq6ehCzZ9CLw9I_JDnuHwEJk1_aEoNvSs_IBU3OgAwl2SKBff7Wt4Kexob_u0 "Minecell_use-cases")
+
+### InfoPanel
+
+![InfoPanel](https://www.plantuml.com/plantuml/png/VP11gW8n38RtFKMMYdY10S6bBXwuSIrncjPY9fMcu-RnZkD9l9YTZkAWyB8epLV-_FcxremfznqRqpAg0cp5nHqAyQ-1KbqGKcWWIAvzeWw31F4_7m-EqK_x9JXafSCtpwd_nYqJ9hA5sDWVcQ3IUYpUEytcJxA_MCmqSq6GY-OO8y_Ddp4ICq4A_fGXkhUkQLxp1_s5Kal5byJ28FX7DlfKqyqrA8o6grKDCQutb9uBdUQDVXepUhtVeBTwJk5AEZ4swt8lt_y0 "InfoPanel")
