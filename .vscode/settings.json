@@ -1,0 +1,17 @@
+{
+    /* "dotnet.defaultSolution": "ConsoleApp1.sln", */
+    "dotnetAcquisitionExtension.existingDotnetPath": [
+        {
+            "extensionId": "ms-dotnettools.csharp",
+            "path": "/home/soren/.dotnet/dotnet"
+        }
+    ],
+    "plantuml.render": "PlantUMLServer",
+    "plantuml.server": "https://www.plantuml.com/plantuml/",
+    "markdown-preview-enhanced.plantumlServer": "https://www.plantuml.com/plantuml/",
+    "plantuml.diagramsRoot": "",
+    "plantuml.includepaths": [
+        "generatedPuml"
+    ],
+    /* "markdown.plantuml.server": "https://www.plantuml.com/plantuml" */
+}
