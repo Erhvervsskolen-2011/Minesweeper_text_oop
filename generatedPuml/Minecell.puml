@@ -1,0 +1,15 @@
+@startuml
+class Minecell {
+    + hasMine : bool = false
+    - x : int
+    - y : int
+    + symbol : char = '▓'
+    + nearbymines : int = 0
+    - isCleared : bool = false
+    - findNabours(pad:Minecell[,]) : Minecell[]
+    - countNearbymines(nabours:Minecell[]) : int
+    + clear() : bool
+    + setFlag() : void
+    + Minecell(x:int, y:int, pad:Minecell[,])
+}
+@enduml

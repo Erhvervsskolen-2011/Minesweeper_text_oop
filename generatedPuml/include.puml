@@ -1,0 +1,7 @@
+@startuml
+!include ./Program.puml
+!include ./Minecell.puml
+!include ./obj/Debug/net8.0/minesweeper.GlobalUsings.g.puml
+!include ./obj/Debug/net8.0/minesweeper.AssemblyInfo.puml
+!include ./obj/Debug/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.puml
+@enduml
