@@ -1,7 +1,7 @@
 
 # Virkemåde
 
-Når et felt _ikke_ har en mine, og "trædes" på, bliver det ryddet, og de fire felter der støder op til ryddes efterfølgende. Disse __nabo-felter__'s naboer ryddes også hvis de er uden miner. Hvis et ryddet felt grænser op imod et felt med en mine, hvises et tal i feltet, for hvor mange miner det grænser op til.
+Når et felt _ikke_ har en mine, og "trædes" på, bliver det ryddet, og de otte felter der støder op til ryddes efterfølgende. Disse __nabo-felter__'s naboer ryddes også hvis de er uden miner. Hvis et ryddet felt grænser op imod et felt med en mine, hvises et tal i feltet, for hvor mange miner det grænser op til.
 
 ## Om at finde nabo-felter
 
