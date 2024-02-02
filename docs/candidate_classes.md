@@ -2,13 +2,16 @@
 
 ## Klassekandidater
 
-I dette projekt forventer jeg at oprette klasserne `GamePad`, `Minecell` og `InfoPanel`.
+I dette projekt forventer jeg at oprette klasserne `GamePad`, `Minecell` og `InfoPanel`, samt muligvis en `MineSweeperGame`.
 
 ### GamePad
 
 Klassen `GamePad`, og en konkret instans af klassen i et objekt, representerer selve spillepladen med alle cellerne hvor der _kan_ være miner.  
 `GamePad`'en har ansvar for en to-dimensionel array med celler, som hver er af klassen `Minecell`.
-Gamepaden skal kunne vise hele spillepladen på konsolen, når spillet er slut skal spillepladen vises på en måde hvor det afsløres 
+
+## Gameover 
+
+GamePad'en skal kunne vise hele spillepladen på konsolen, når spillet er slut skal spillepladen vises på en måde hvor det afsløres 
 * hvor der _eventuelt_ er miner som ikke markeret med flag, 
 * flag som markerer en celle _uden_ mine,
 * miner der _ikke_ er markeret.
