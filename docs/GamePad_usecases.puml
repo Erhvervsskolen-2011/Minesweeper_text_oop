@@ -1,0 +1,31 @@
+@startuml
+
+left to right direction
+
+Game -down-> (init)
+
+note right of init
+    kald constructor `GamePad()`
+        som opretter to-dimensionel array med MineCell's
+        
+        Find n tilfældige x,y koodinater (uden dubletter)
+            Set hasMine = true på de valgte celler
+        
+        kald findNearMines() på alle celler
+end note
+
+Game -down-> (show)
+
+note right of show
+    Viser hele pladen.
+    kaldes ved spillets start
+end note
+
+Game -down-> (show_final)
+
+note right of show_final
+    Viser spillepalden ved spillets afslutning, og afslører skjilte miner mv.
+    kalder evaluateMines
+end note
+
+@enduml

@@ -9,9 +9,6 @@ note right of (init)
     set x og y
     kald findNabours()
   
-  Find n tilfældige x,y koodinater (uden dubletter)
-  Set hasMine = true på de valgte celler
-
   Når alle celler er oprettet
     for alle celler,
         kald countNearbymines
@@ -23,9 +20,9 @@ note right of (setflag)
     set cellens symbol til 'f'
 end note
 
-Game --> (clear celle)
+Game --> (clear)
 
-note right of (clear celle)
+note right of (clear)
     Hvis cellen har mine
         gameover
     ellers Hvis cellen har 1 eller flere miner i nærheden

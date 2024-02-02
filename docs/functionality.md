@@ -33,6 +33,22 @@ Lige sådan er alle nabofelterne til venstre er en mindre end den aktulle kolonn
 
 Her er hver parentes et talpar man trækker fra eller lægger til x, y koordinattet, altså linien og kolonnen hvor det aktuelle felt er.
 
+### Alternativ
+
+Som et alternativ til ovenstående kan man benytte en strategi hvor spillepalden udvides eller fores med en ekstra række eller kollene øverst, neders, til venstre og til højre, altså hele vejen rundt.
+Det ekstra felter vises ikke, på spillepladen, og kan ikke rydes, men tjener kun til at man kan tælle miner hele vejen rundt, uden undtagelse.
+
+## Afslutning af spillet
+
+Spillet afsluttes, enten 
+* fordi spilleren ryder et felt med en mine, eller 
+* fordi alle felter, uden miner, enten 
+  * er markeret med flag, eller 
+  * rydet, eller
+* spilleren taster _ESC_.
+
+I det første tilfælde har spilleren tabt, i andet tilfælde har spilleren vundet, tredje er uafgjort.
+
 ## Statusinformationer
 
 I bunden af skærmen, eller i hvert fald under spillepladen, skal der udskrives nogle statusinformationer (InfoPanel), så spilleren løbenmde kan følge med i :
@@ -42,7 +58,6 @@ I bunden af skærmen, eller i hvert fald under spillepladen, skal der udskrives 
 * hvor stor en del at spille pladen der rydet i %
 
 ### Gameover
-Når spillet afsluttes, enten fordi spilleren ryder et felt med en mine, eller fordi alle felter enten er markeret med flag, eller rydet.
 
 Ved afslutningen skal statusinformationerne opdateres, og suppleres med info om:
 * forkert placerede flag

@@ -6,7 +6,9 @@ class GamePad {
     + cells Minecell[,]
 
     + Gamepad(nLines :int, nColums : int)
-    + evaluateMines()
+    + EvaluateMines()
+    + Show()
+    + ShowGameover()
 
 }
 
