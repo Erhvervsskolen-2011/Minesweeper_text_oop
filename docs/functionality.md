@@ -38,7 +38,7 @@ Her er hver parentes et talpar man trækker fra eller lægger til x, y koordinat
 I bunden af skærmen, eller i hvert fald under spillepladen, skal der udskrives nogle statusinformationer (InfoPanel), så spilleren løbenmde kan følge med i :
 * hvor mange miner der er ialt, 
 * hvormange miner som er markeret med flag (dog uden at afsløre om flagene er sat korrekt), 
-* hvor mange minder der tilbage
+* hvor mange miner der tilbage
 * hvor stor en del at spille pladen der rydet i %
 
 ### Gameover
