@@ -1,0 +1,35 @@
+# left to right direction
+
+@startuml
+
+left to right direction
+
+Game -down-> (init)
+
+note right of init
+    kald constructor `Infopanel(gamePad)`
+    find linienummer under spillepladen
+
+end note
+
+Game -down-> (Update)
+
+note right of Update
+    Opdaterer statusoplysningerne i InfoPanelet
+    * antal miner ialt
+    * antal flag
+    * miner tilbage (antal miner - antal flag)
+    * % af spillepladen cleared
+
+end note
+
+usecase "Update final" as update_final  
+Game -down-> (update_final)
+
+note right of update_final
+    Opdater statusoplysniger (som i Update), samt
+    * korrekt placerede flag
+    * forkert placerede flag
+end note
+
+@enduml
